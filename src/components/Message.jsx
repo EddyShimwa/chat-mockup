@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function Message({
+const Message = ({
   message,
   isDarkTheme,
   fontSize,
   chatBubbleColor,
-}) {
+}) => {
   return (
     <div
       className={`flex ${
@@ -48,3 +48,4 @@ export default function Message({
     </div>
   );
 }
+export default Message;

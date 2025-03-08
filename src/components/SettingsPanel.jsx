@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SettingsPanel({
+const SettingsPanel = ({
   isDarkTheme,
   toggleTheme,
   headerColor,
@@ -15,7 +15,7 @@ export default function SettingsPanel({
   setChatBubbleColor,
   chatWindowSize,
   setChatWindowSize,
-}) {
+}) => {
   return (
     <div
       className={`w-1/3 border-r p-4 animate-slide-in ${
@@ -71,7 +71,7 @@ export default function SettingsPanel({
               checked={soundNotificationsEnabled}
               onChange={toggleSoundNotifications}
             />
-            <span>Sound Notifications</span>
+            <span> Notification Sound</span>
           </label>
           <label className="flex items-center gap-2 mt-2">
             <span>Font Size</span>
@@ -128,3 +128,5 @@ export default function SettingsPanel({
     </div>
   );
 }
+
+export default SettingsPanel;

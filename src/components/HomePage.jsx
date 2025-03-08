@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FaSun, FaMoon, FaArrowDown } from "react-icons/fa";
 import ChatBot from "./ChatBot";
 
-export default function HomePage() {
+const HomePage = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const toggleTheme = () => {
@@ -30,18 +30,25 @@ export default function HomePage() {
             <FaSun className="text-xl text-yellow-400 transition-transform duration-300 hover:rotate-12" />
           ) : (
             <FaMoon className="text-xl text-gray-600 transition-transform duration-300 hover:rotate-12" />
-          )}  
-            <span className="text-sm font-medium">
-              {isDarkTheme ? "Light Mode" : "Dark Mode"}
-            </span>
-          </button>
-        
+          )}
+          <span className="text-sm font-medium">
+            {isDarkTheme ? "Light Mode" : "Dark Mode"}
+          </span>
+        </button>
       </header>
       <main className="mx-auto px-4 py-8 flex-1 flex flex-col">
         <h1 className="text-6xl font-bold">Welcome to our platform</h1>
-        
+        <p className="mt-5 text-lg">Open the chat button in the bottom right to explore </p>
       </main>
-      <ChatBot />
+
+   
+
+        <div className="fixed bottom-24 right-8 flex flex-col items-center">
+        <FaArrowDown height={80} className="text-6xl text-blue-500 animate-bounce" />
+        <ChatBot /> 
+      </div>
     </div>
   );
 }
+
+export default HomePage;
